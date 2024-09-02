@@ -15,34 +15,80 @@
         <h1>HAPPY's WEB</h1>
     </div>
 
-    <input type="text" placeholder="Tìm kiếm ..." id='search-bar' onkeyup="Search()">
+    <div class="search-container">
+        <input type="text" placeholder="Tìm kiếm ..." id="search-bar" onkeyup="Search()">
+        <button class="search-button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
     <div id='page'>
-        <div id='danh-muc'>
-            <label class='lua-chon'>Tìm kiếm theo:</label>
-            <div class='lua-chon'>
-                <input type="radio" name='search-for' id='search-name' checked> 
+        <div class='danh-muc'>
+            <b><label class = 'lua-chon-title'>Tìm kiếm theo</label></b>
+
+            <div class='lua-chon' id = 'name-radio'>
+                <input type="radio" name='search-for' id='search-name' value='name' checked onchange="updateOptionBackgroundColor()"> 
                 <label for='search-name'>Tên</label>
             </div>
-            <div class='lua-chon'>
-                <input type="radio" name='search-for' id='search-author'> 
+
+            <div class='lua-chon' id = 'author-radio'>
+                <input type="radio" name='search-for' id='search-author' value='author' onchange="updateOptionBackgroundColor()"> 
                 <label for='search-author'>Tác giả</label>
             </div>
+
+
+            <b><label class = 'lua-chon-title'>Thể loại</label></b>
+
+            <div class='lua-chon-type lua-chon' id = 'all-type-radio'>
+                <input type="radio" name='search-type' id='all-type' value='all-type' checked onchange="updateOptionBackgroundColor()"> 
+                <label for='all-type'>All</label>
+            </div>
+
+            <div class='lua-chon-type lua-chon' id = 'minecraft-mod-radio'>
+                <input type="radio" name='search-type' id='minecraft-mod-type' value='minecraft-mod'  onchange="updateOptionBackgroundColor()"> 
+                <label for='minecraft-mod-type'>Minecraft Mod</label>
+            </div>
+
+            <div class='lua-chon-type lua-chon' id = 'unity-game-radio'>
+                <input type="radio" name='search-type' id='unity-game-type' value='unity-game' onchange="updateOptionBackgroundColor()"> 
+                <label for='unity-game-type'>Unity Game</label>
+            </div>
+
         </div>
 
         <ul id='main'>
-            <li class="cards" data-title="Better Vanilla" data-author="YLufHapp06" data-des="This is a minecraft mod for 1.20.1 to imrove Vanilla style with some supporting mods (Pehkui, TerraBlender,...)" data-file="BetterVanilla.rar">
+            <li class="cards" data-title="Better Vanilla" 
+                                data-author="YLufHapp06" 
+                                data-version = "0.0.1"
+                                data-des="This is a minecraft mod for 1.20.1 to imrove Vanilla style with some supporting mods (Pehkui, TerraBlender,...)" 
+                                data-file="BetterVanilla.rar">
                 <div class="container">
-                    <h4 class='name'><b>Better Vanilla</b></h4> 
-                    <p class='author'>YLufHapp06</p> 
+
+                    <h2 class='name'>Better Vanilla</h2> 
+
+                    <img src="minecraft.png" class = "icon" alt="minecraft icon">
+
+                    <h5 class='author'>YLufHapp06</h5>
+                    <p class='type'>Minecraft Mod</p> 
+ 
                 </div>
             </li>
-            
-            <!-- <li class="cards" data-title="Văn 10" data-author="Thiên Khang" data-file="path/to/van10.pdf">
+
+            <li class="cards" data-title="Game Bắn Cung" 
+                                data-author="YLufHapp06" 
+                                data-version = "0.0.2"
+                                data-des="A Beta Unity Game you have a bow and shoot enemies around you!" 
+                                data-file="GameBanCung.rar">
                 <div class="container">
-                    <h4 class='name'><b>Văn 10</b></h4> 
-                    <p class='author'>Thiên Khang</p> 
+
+                    <h2 class='name'>Game Bắn Cung</h2> 
+
+                    <img src="unity.png" class = "icon" alt="minecraft icon">
+
+                    <h5 class='author'>YLufHapp06</h5> 
+                    <p class='type'>Unity Game</p> 
+
                 </div>
-            </li> -->
+            </li>
 
             <!-- <button class="cards" type="button">
                 +
@@ -50,16 +96,31 @@
         </ul>
     </div>
 
+    <div id='extra-info'>
+
+        
+        <a href="https://discord.gg/xuvhtXEby9" class="discord-button" target="_blank">
+            <i class="fab fa-discord discord-icon">
+                _My Discord Server
+            </i>
+        </a>
+
+    </div>
+
+
     <!-- Modal for showing card details -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="modal-title"></h2>
-            <h3 id="modal-author"></h3>
-            <p id="modal-des"></p>
-            <a id="modal-download" href="" download class="download-btn">
-                <i class="fas fa-download"></i> Download File
-            </a>        
+            <div class="modal-main-content">
+                <h3 id="modal-author"></h3>
+                <b><p id="modal-version"></p></b>
+                <p id="modal-des"></p>
+                <a id="modal-download" href="" download class="download-btn">
+                    <i class="fas fa-download"></i> Download File
+                </a>    
+            </div>    
         </div>
     </div>
 
