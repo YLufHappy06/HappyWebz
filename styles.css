@@ -1,9 +1,12 @@
 :root {
     --background-color: rgb(0, 20, 29);
     --background-color2: rgb(71, 157, 255);
+    --extra-info-bg-color: rgb(0, 243, 203);
     --text-color: white;
     --cards-bg-color: rgb(216, 252, 255);
     --text-card-color: black;
+    --discord-color : rgb(114, 137, 218);
+    --discord-color-dark : rgb(68, 84, 139);
 }
 
 body {
@@ -14,23 +17,6 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-}
-
-#search-bar {
-    background-color: azure;
-    margin: 25px auto;
-    width: 30vw;
-    height: 40px;
-    font-size: 25px;
-    font-family: 'Lucida Sans', sans-serif;
-    border: 2px solid var(--background-color2);
-    border-radius: 20px;
-    display: block;
-}
-
-#search-name, #search-author {
-    width: 20px;
-    height: 20px;
 }
 
 #title {
@@ -53,7 +39,48 @@ body {
     display: flex;
 }
 
-#danh-muc {
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin-top: 30px; /* Optional: add space from the top */
+}
+
+#search-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 750px; /* Shorter width */
+    margin-right: 5px; /* Reduced margin */
+    height: 30px;
+    font-size: 25px;
+}
+
+.search-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button i {
+    font-size: 16px;
+
+}
+
+input[type = 'radio'] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.danh-muc {
     background-color: rgb(0, 46, 46);
     width: 235px;
     height: 100vh;
@@ -62,7 +89,41 @@ body {
     font-family: monospace;
     text-transform: uppercase;
     font-size: 20px;
+    display:  block;
+}
+
+.lua-chon-title {
+    position: relative;
+    padding-left: 0px;
+    line-height: 20px;
+    display: flex;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 25px;
     padding-top: 25px;
+    margin-bottom: 25px;
+}
+
+.lua-chon {
+    background-color: rgb(0, 30, 30);
+    display: block;
+
+    line-height: 70px;
+}
+.lua-chon:hover {
+    background-color: rgb(0, 22, 22);
+}
+
+.lua-chon label{
+    display: flex;
+    padding-left: 75px;
+    cursor: pointer;
+}
+
+.lua-chon-type label{
+    display: flex;
+    padding-left: 50px;
+    cursor: pointer;
 }
 
 #main {
@@ -75,11 +136,8 @@ body {
     padding-left: 15px;
 }
 
-.lua-chon {
-    display: block;
-}
-
 .cards {
+    cursor: pointer;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4);
     padding: 10px;
     margin: 10px;
@@ -87,16 +145,31 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-card-color);
     border-radius: 10px;
-    border: 2px solid black;
-    transition: all 0.5s ease;
+    border: 10px solid rgb(37, 71, 143);
+    transition: all 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 150px; /* Fixed width */
-    height: 150px; /* Fixed height to match width */
+    width: 350px; /* Fixed width */
+    height: 450px; /* Fixed height to match width */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 23px;
+    
+}
+
+.cards:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+    background-color: aquamarine;
+    padding: 0px;
+}
+
+.icon{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
 }
 
 button.cards {
@@ -112,15 +185,7 @@ button.cards:hover {
     color:rgb(0, 48, 48);
 }
 
-.cards:hover {
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
-    font-size: 22px;
-    background-color: aquamarine;
-    padding: 0px;
-}
 
-
-/* Add this to your styles.css */
 
 /* Modal styles */
 .modal {
@@ -136,14 +201,25 @@ button.cards:hover {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+#modal-title{
+    text-align: center;
+}
+
 .modal-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(0, 97, 153);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid rgb(136, 136, 136);
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
     border-radius: 8px;
     color:aliceblue;
+    
+}
+
+.modal-main-content {
+    background-color: rgb(0, 67, 105);
+   padding: 10px;
 }
 
 .close {
@@ -153,8 +229,7 @@ button.cards:hover {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -179,4 +254,30 @@ button.cards:hover {
 
 .download-btn i {
     margin-right: 8px;
+}
+
+#modal-download{
+    margin-left: 19vw;
+    position: absolute;
+}
+
+#extra-info {
+    background-color: var(--extra-info-bg-color);
+}
+.discord-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 17px;
+    color: #fff;
+    background-color: var(--discord-color); /* Discord color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 4px;
+    border: 2px solid var(--discord-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discord-button:hover {
+    background-color: var(--discord-color-dark); /* Lighten color on hover */
 }
