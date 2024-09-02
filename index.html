@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Custom Web</title>
+</head>
+<body>
+
+    <div id='title'>
+        <h1>CUSTOM WEB</h1>
+    </div>
+
+    <input type="text" placeholder="Tìm kiếm ..." id='search-bar' onkeyup="Search()">
+    <div id='page'>
+        <div id='danh-muc'>
+            <label class='lua-chon'>Tìm kiếm theo:</label>
+            <div class='lua-chon'>
+                <input type="radio" name='search-for' id='search-name' checked> 
+                <label for='search-name'>Tên</label>
+            </div>
+            <div class='lua-chon'>
+                <input type="radio" name='search-for' id='search-author'> 
+                <label for='search-author'>Tác giả</label>
+            </div>
+        </div>
+
+        <ul id='main'>
+            <li class="cards" data-title="Toán 11" data-author="Gia Hoàng" data-file="path/to/toan11.pdf">
+                <div class="container">
+                    <h4 class='name'><b>Toán 11</b></h4> 
+                    <p class='author'>Gia Hoàng</p> 
+                </div>
+            </li>
+            
+            <li class="cards" data-title="Văn 10" data-author="Thiên Khang" data-file="path/to/van10.pdf">
+                <div class="container">
+                    <h4 class='name'><b>Văn 10</b></h4> 
+                    <p class='author'>Thiên Khang</p> 
+                </div>
+            </li>
+
+            <button class="cards" type="button">
+                +
+            </button>
+        </ul>
+    </div>
+
+    <!-- Modal for showing card details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-author"></p>
+            <a id="modal-download" href="" download>Download File</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

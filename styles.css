@@ -1,0 +1,161 @@
+:root {
+    --background-color: rgb(0, 20, 29);
+    --background-color2: rgb(71, 157, 255);
+    --text-color: white;
+    --cards-bg-color: rgb(216, 252, 255);
+    --text-card-color: black;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--background-color), rgb(0, 54, 63));
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#search-bar {
+    background-color: azure;
+    margin: 25px auto;
+    width: 30vw;
+    height: 40px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', sans-serif;
+    border: 2px solid var(--background-color2);
+    border-radius: 20px;
+    display: block;
+}
+
+#search-name, #search-author {
+    width: 20px;
+    height: 20px;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-weight: 100;
+    font-size: 25px;
+    height: 70px;
+    background-color: var(--background-color2);
+    text-transform: uppercase;
+}
+
+#title h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    display: flex;
+}
+
+#danh-muc {
+    background-color: rgb(0, 46, 46);
+    width: 235px;
+    height: 100vh;
+    border-right: 2px solid snow;
+    color: var(--text-color);
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-top: 25px;
+}
+
+#main {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap properly */
+    color: var(--text-color);
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.lua-chon {
+    display: block;
+}
+
+.cards {
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--cards-bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-card-color);
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: all 0.5s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height to match width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+button.cards {
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color:azure
+}
+
+button.cards:hover {
+    font-size: 50px;
+    color:rgb(0, 48, 48);
+}
+
+.cards:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    font-size: 22px;
+    background-color: aquamarine;
+    padding: 0px;
+}
+
+
+/* Add this to your styles.css */
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
