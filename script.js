@@ -30,17 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modal-title');
     const modalAuthor = document.getElementById('modal-author');
+    const modalDes = document.getElementById('modal-des');
     const modalDownload = document.getElementById('modal-download');
     const closeModal = document.querySelector('.close');
 
     cards.forEach(card => {
         card.addEventListener('click', function() {
-            const title = this.getAttribute('data-title');
+            let title = this.getAttribute('data-title');
             const author = this.getAttribute('data-author');
+            const des = this.getAttribute('data-des');
             const file = this.getAttribute('data-file');
 
-            modalTitle.textContent = title;
-            modalAuthor.textContent = author;
+            modalTitle.textContent = title.toUpperCase();
+            modalAuthor.textContent = "By: " + author;
+            modalDes.textContent = des;
             modalDownload.href = file;
             modalDownload.download = file.substring(file.lastIndexOf('/') + 1);
 

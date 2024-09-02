@@ -2,6 +2,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Custom Web</title>
@@ -27,23 +30,23 @@
         </div>
 
         <ul id='main'>
-            <li class="cards" data-title="Toán 11" data-author="Gia Hoàng" data-file="path/to/toan11.pdf">
+            <li class="cards" data-title="Better Vanilla" data-author="YLufHapp06" data-des="This is a minecraft mod for 1.20.1 to imrove Vanilla style with some supporting mods (Pehkui, TerraBlender,...)" data-file="BetterVanilla.rar">
                 <div class="container">
-                    <h4 class='name'><b>Toán 11</b></h4> 
-                    <p class='author'>Gia Hoàng</p> 
+                    <h4 class='name'><b>Better Vanilla</b></h4> 
+                    <p class='author'>YLufHapp06</p> 
                 </div>
             </li>
             
-            <li class="cards" data-title="Văn 10" data-author="Thiên Khang" data-file="path/to/van10.pdf">
+            <!-- <li class="cards" data-title="Văn 10" data-author="Thiên Khang" data-file="path/to/van10.pdf">
                 <div class="container">
                     <h4 class='name'><b>Văn 10</b></h4> 
                     <p class='author'>Thiên Khang</p> 
                 </div>
-            </li>
+            </li> -->
 
-            <button class="cards" type="button">
+            <!-- <button class="cards" type="button">
                 +
-            </button>
+            </button> -->
         </ul>
     </div>
 
@@ -52,8 +55,11 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="modal-title"></h2>
-            <p id="modal-author"></p>
-            <a id="modal-download" href="" download>Download File</a>
+            <h3 id="modal-author"></h3>
+            <p id="modal-des"></p>
+            <a id="modal-download" href="" download class="download-btn">
+                <i class="fas fa-download"></i> Download File
+            </a>        
         </div>
     </div>
 
